@@ -17,7 +17,10 @@ class Bubble_Launcher_Model_Indexer_Config extends Bubble_Launcher_Model_Indexer
             if (isset($sectionData['@']) && isset($sectionData['@']['module'])) {
                 $module = $sectionData['@']['module'];
             }
-            $sectionLabel = (string) $sectionData['label'];
+            $sectionLabel = '';
+            if (isset($sectionData['label'])) {
+                $sectionLabel = (string) $sectionData['label'];
+            }
             if ($module) {
                 $sectionLabel = Mage::helper($module)->__($sectionLabel);
             }
