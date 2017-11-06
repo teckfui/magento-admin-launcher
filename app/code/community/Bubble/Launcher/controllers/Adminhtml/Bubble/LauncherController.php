@@ -9,6 +9,11 @@ class Bubble_Launcher_Adminhtml_Bubble_LauncherController extends Mage_Adminhtml
 {
     protected $_publicActions = array('index');
 
+    protected function _isAllowed()
+    {
+        return true;
+    }
+    
     public function indexAction()
     {
         $data = Mage::getSingleton('bubble_launcher/launcher')->getIndexData();
